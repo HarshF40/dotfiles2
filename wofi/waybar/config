@@ -1,0 +1,86 @@
+{
+    "layer": "top",
+    "position": "bottom",
+    "height": 15,
+    "spacing": 0,
+    "margin": 0,
+    "modules-left": ["hyprland/workspaces", "hyprland/submap", "hyprland/window"],
+    "modules-center": [],
+    "modules-right": ["custom/focus", "pulseaudio", "battery", "network", "clock"],
+    
+    "hyprland/workspaces": {
+        "disable-scroll": false,
+        "all-outputs": true,
+        "format": "{name}",
+        "persistent-workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": []
+        }
+    },
+    
+    "hyprland/submap": {
+        "format": "<span style=\"italic\">{}</span>",
+        "max-length": 8,
+        "tooltip": false
+    },
+    "clock": {
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "{:%Y-%m-%d %H:%M:%S}",
+        "interval": 1
+    },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "BAT {capacity}%",
+        "format-charging": "BAT {capacity}%",
+        "format-plugged": "BAT {capacity}%",
+        "format-alt": "BAT {time}",
+        "format-full": "BAT FULL"
+    },
+    
+    "network": {
+    "format-wifi": "{essid} {bandwidthDownBits}",
+    "format-ethernet": "ETH {ifname} ↓{bandwidthDownBits}",
+    "tooltip-format": "{ifname} via {gwaddr}",
+    "format-linked": "ETH {ifname} (No IP)",
+    "format-disconnected": "NET down",
+    "format-alt": "{ifname}: {ipaddr}/{cidr}",
+    "interval": 2
+    },
+    
+    "pulseaudio": {
+        "format": "VOL {volume}%",
+        "format-bluetooth": "VOL {volume}% ",
+        "format-bluetooth-muted": "VOL MUTED ",
+        "format-muted": "VOL MUTED",
+        "format-source": "MIC {volume}%",
+        "format-source-muted": "MIC MUTED",
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-click-right": "pavucontrol"
+    },
+    
+    "backlight": {
+    "format": "BRI {percent}%",
+    "format-icons": ["", "", "", "", "", "", "", "", ""],
+    "on-scroll-up": "brightnessctl set +5%",
+    "on-scroll-down": "brightnessctl set 5%-"
+    },
+    
+    "hyprland/window": {
+    "format": "{}",
+    "max-length": 70,
+    "tooltip": false
+    },
+
+    "custom/focus": {
+    "exec" : "cat ~/.config/waybar/focus.txt",
+    "interval" : 1,
+    "tooltip" : false,
+    "format" : "FLW {}"
+    }
+}

@@ -1,0 +1,48 @@
+return {
+    {
+        "akinsho/flutter-tools.nvim",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "nvim-lua/popup.nvim",
+            "nvim-telescope/telescope.nvim",
+            "hrsh7th/nvim-cmp",
+        },
+        ft = { "dart" },
+        config = function()
+            require("flutter-tools").setup({
+                lsp = {
+                    color = {
+                        enabled = true,
+                        background = true,
+                        virtual_text = true,
+                        virtual_text_str = "■",
+                    },
+                    on_attach = function(_, bufnr)
+                        -- Standard Neovim keymaps instead of which-key
+                        vim.keymap.set('n', '<leader>fr', '<cmd>FlutterRun<cr>', { buffer = bufnr, desc = "Flutter Run" })
+                        vim.keymap.set('n', '<leader>fR', '<cmd>FlutterReload<cr>',
+                            { buffer = bufnr, desc = "Flutter Hot Reload" })
+                        vim.keymap.set('n', '<leader>fd', '<cmd>FlutterDevices<cr>',
+                            { buffer = bufnr, desc = "Flutter Devices" })
+                        vim.keymap.set('n', '<leader>fq', '<cmd>FlutterQuit<cr>',
+                            { buffer = bufnr, desc = "Flutter Quit" })
+                        vim.keymap.set('n', '<leader>fD', '<cmd>FlutterDetach<cr>',
+                            { buffer = bufnr, desc = "Flutter Detach" })
+                        vim.keymap.set('n', '<leader>fe', '<cmd>FlutterEmulators<cr>',
+                            { buffer = bufnr, desc = "Flutter Emulators" })
+                        vim.keymap.set('n', '<leader>fo', '<cmd>FlutterOutlineToggle<cr>',
+                            { buffer = bufnr, desc = "Flutter Outline" })
+                    end,
+                },
+                widget_guides = {
+                    enabled = true,
+                },
+                closing_tags = {
+                    highlight = "ErrorMsg",
+                    prefix = "// ",
+                    enabled = true,
+                },
+            })
+        end,
+    },
+}

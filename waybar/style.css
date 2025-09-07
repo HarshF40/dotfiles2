@@ -1,0 +1,157 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "DejaVu Sans Mono", monospace;
+    font-size: 13px;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+/* Workspaces */
+#workspaces {
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    background-color: #000000;
+    color: #888888;
+    border: none;
+    border-right: 1px solid #222222;
+    margin: 0;
+    min-width: 0;
+}
+
+#workspaces button:hover {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+#workspaces button.active {
+    background-color: #4c7899;
+    color: #ffffff;
+}
+
+#workspaces button.urgent {
+    background-color: #900000;
+    color: #ffffff;
+}
+
+/* Submap */
+#submap {
+    background-color: #900000;
+    color: #ffffff;
+    padding: 0 10px;
+    border-right: 1px solid #333333;
+}
+
+/* Right side modules */
+#pulseaudio,
+#network,
+#cpu,
+#memory,
+#temperature,
+#battery,
+#clock,
+#tray,
+#custom-focus {
+    padding: 0 10px;
+    color: #ffffff;
+    background-color: #000000;
+    border-left: 1px solid #333333;
+}
+
+/* Individual module styling to match i3status colors */
+#pulseaudio {
+    color: #ffffff;
+}
+
+#network {
+    color: #ffffff;
+}
+
+#network.disconnected {
+    color: #f53c3c;
+}
+
+#cpu {
+    color: #ffffff;
+}
+
+#memory {
+    color: #ffffff;
+}
+
+#temperature {
+    color: #ffffff;
+}
+
+#temperature.critical {
+    color: #f53c3c;
+}
+
+#battery {
+    color: #ffffff;
+}
+
+#battery.charging {
+    color: #00ff00;
+}
+
+#battery.warning:not(.charging) {
+    color: #ffff00;
+}
+
+#battery.critical:not(.charging) {
+    color: #f53c3c;
+}
+
+#clock {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+#backlight {
+    padding: 0 10px;
+    color: #ffffff;
+    background-color: #000000;
+    border-left: 1px solid #333333;
+}
+
+#window {
+    padding: 0 10px;
+    color: #ffffff;
+    background-color: #000000;
+    font-weight: normal;
+}
+
+#tray {
+    background-color: #000000;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #eb4d4b;
+}
+
+/* Tooltip styling */
+tooltip {
+    background-color: #000000;
+    border: 1px solid #333333;
+    color: #ffffff;
+    border-radius: 0;
+}
+
+tooltip label {
+    color: #ffffff;
+}
